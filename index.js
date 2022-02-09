@@ -1,16 +1,11 @@
 const root = document.querySelector('#root')
 
 const tick = () => {
-  const timeNow = new Date()
-
-  let s = timeNow.getSeconds()
-  let m = timeNow.getMinutes()
-  let h = timeNow.getHours()
+  const dateObject = new Date()
+  const time = dateObject.toTimeString().slice(0, 8)  //it would print GMT if I didn't slice it
 
   const html = `
-  <span>${h} :</span>
-  <span>${m} :</span>
-  <span>${s}</span>
+    <span>${time}</span>
   `
 
   root.innerHTML = html
